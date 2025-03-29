@@ -1,31 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Drakonit</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #0d0d0d;
       color: #d4af37;
-      padding: 50px;
+      text-align: center;
     }
+
+    .disclaimer {
+      background-color: #1a1a1a;
+      color: #999;
+      font-size: 0.9em;
+      padding: 20px;
+      border-top: 1px solid #333;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 40px 20px 20px;
+    }
+
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
+      font-size: 3em;
       color: #00ff84;
+      margin-bottom: 10px;
     }
+
+    p {
+      font-size: 1.2em;
+      color: #cccccc;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
     img {
-      width: 300px;
+      width: 250px;
       border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 255, 132, 0.6);
+      box-shadow: 0 0 25px rgba(0, 255, 132, 0.5);
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #00ff84;
+      color: #0d0d0d;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #d4af37;
+      color: #fff;
+    }
+
+    .form-section {
+      margin: 50px auto;
+      max-width: 400px;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 132, 0.2);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    canvas {
+      max-width: 600px;
+      margin: 40px auto;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Drakonit Web Site</h1>
-  <img src="תמונת פרופיל GPT.png" alt="Drakonit Profile Image">
+  <header>
+    <h1>Welcome to Drakonit Web Site</h1>
+    <p>האתר שנבנה מתוך השראה, קוד פתוח וסטייל שוק ההון 💰</p>
+    <img src="profile.png" alt="Drakonit Profile Image">
+    <br>
+    <a href="https://wa.me/972501234567" class="btn" target="_blank">דברי איתי ב-WhatsApp</a>
+  </header>
+
+  <canvas id="stockChart"></canvas>
+
+  <section class="form-section">
+    <h2>רוצה לדבר איתי?</h2>
+    <form action="https://formspree.io/f/xvgkbrby" method="POST">
+      <input type="text" name="name" placeholder="שם מלא" required>
+      <input type="email" name="email" placeholder="אימייל" required>
+      <textarea name="message" rows="4" placeholder="מה תרצי לשתף אותי?" required></textarea>
+      <button class="btn" type="submit">שלחי</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Drakonit. All rights reserved.</p>
+  </footer>
+
+  <div class="disclaimer">
+    כל הנאמר באתר הינם לצורך מידע כללי בלבד ואין בהם משום המלצה ו/או ייעוץ לגבי כדאיות השקעה כזו או אחרת.<br>
+    הדברים אינם מהווים תחליף לייעוץ ספציפי המתחשב בנתונים ובצרכים המיוחדים של כל אדם, וכל העושה בהם שימוש עושה זאת על דעתה ועל אחריותה בלבד.
+  </div>
+
+  <script>
+    const ctx = document.getElementById('stockChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: Array.from({length: 20}, (_, i) => i + 1),
+        datasets: [{
+          label: 'מדד דמיוני',
+          data: Array.from({length: 20}, () => Math.random() * 100 + 100),
+          borderColor: '#00ff84',
+          backgroundColor: 'rgba(0, 255, 132, 0.1)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        animation: {
+          duration: 2000,
+          easing: 'easeInOutQuart'
+        },
+        scales: {
+          x: { display: false },
+          y: { display: false }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+    setInterval(() => {
+      chart.data.datasets[0].data = chart.data.datasets[0].data.map(
+        y => y + (Math.random() - 0.5) * 5
+      );
+      chart.update();
+    }, 2000);
+  </script>
 </body>
 </html>
