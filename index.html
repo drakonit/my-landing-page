@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Drakonit</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
       margin: 0;
@@ -101,6 +102,54 @@
       font-size: 0.9em;
       color: #555;
     }
+
+    .recommended-links {
+      position: fixed;
+      top: 150px;
+      right: 0;
+      width: 230px;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 15px;
+      border-radius: 8px 0 0 8px;
+      box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      text-align: right;
+    }
+
+    .recommended-links h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: gold;
+      text-align: center;
+    }
+
+    .recommended-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .recommended-links li {
+      margin-bottom: 10px;
+    }
+
+    .recommended-links a {
+      color: #00ff99;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .recommended-links a:hover {
+      text-decoration: underline;
+    }
+
+    .recommended-links i {
+      min-width: 16px;
+    }
   </style>
 </head>
 <body>
@@ -142,9 +191,19 @@
     <p>© 2025 Drakonit. All rights reserved.</p>
   </footer>
 
+  <div class="recommended-links">
+    <h3>לינקים מומלצים</h3>
+    <ul>
+      <li><a href="https://www.bizportal.co.il/" target="_blank"><i class="fas fa-chart-line"></i> ביזפורטל </a></li>
+      <li><a href="https://www.themarker.com/" target="_blank"><i class="fas fa-file-invoice-dollar"></i> דה מארקר </a></li>
+      <li><a href="https://www.tradingview.com/" target="_blank"><i class="fas fa-chart-pie"></i> TradingView</a></li>
+      <li><a href="https://www.globes.co.il/" target="_blank"><i class="fas fa-newspaper"></i> גלובס</a></li>
+    </ul>
+  </div>
+
   <div class="disclaimer">
-    כל הנאמר באתר הינם לצורך מידע כללי בלבד ואין בהם משום המלצה ו/או ייעוץ לגבי כדאיות השקעה כזו או אחרת.<br>
-    הדברים אינם מהווים תחליף לייעוץ ספציפי המתחשב בנתונים ובצרכים המיוחדים של כל אדם, וכל העושה בהם שימוש עושה זאת על דעתה ועל אחריותה בלבד.
+    כל הנאמר באתר הינו לצורך מידע כללי בלבד ואין בו משום המלצה ו/או ייעוץ לגבי כדאיות השקעה כזו או אחרת.<br>
+    הדברים אינם מהווים תחליף לייעוץ ספציפי המתחשב בנתונים ובצרכים המיוחדים של כל אדם, וכל העושה בהם שימוש עושה זאת על דעתו ועל אחריותו בלבד.
   </div>
 
   <script>
@@ -186,4 +245,3 @@
   </script>
 </body>
 </html>
-
