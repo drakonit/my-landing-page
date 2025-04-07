@@ -195,6 +195,34 @@
       color: #fff;
     }
 
+
+    @media (max-width: 768px) {
+      .recommended-links, .strategize-banner {
+        position: static;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 20px 0;
+      }
+
+      .recommended-links h3,
+      .strategize-banner h3 {
+        text-align: center;
+      }
+
+      .recommended-links ul,
+      .strategize-banner p {
+        text-align: right;
+        padding: 0 15px;
+      }
+
+      .recommended-links,
+      .strategize-banner {
+        background-color: #1a1a1a;
+        padding: 20px;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -264,14 +292,16 @@
   </ul>
 </div>
 
-  
-  <div class="strategize-banner">
+<div class="strategize-banner">
     <h3><i class="fas fa-lightbulb"></i> הכירו את StrategiZe</h3>
     <p>כלי ניתוח חכם שמזהה אסטרטגיות השקעה מנצחות על בסיס ביצועים היסטוריים.</p>
     <a class="strategize-btn" href="https://www.strategize.ai" target="_blank">
       כנסו לאתר
     </a>
   </div>
+
+  
+  
 
 
   <div class="disclaimer">
