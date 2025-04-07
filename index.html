@@ -152,18 +152,18 @@
     }
   
     .strategize-banner {
-      position: fixed;
-      top: 150px;
-      left: 0;
-      width: 230px;
-      background-color: #1a1a1a;
-      color: #fff;
-      padding: 15px;
-      border-radius: 0 8px 8px 0;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      text-align: center;
-    }
+  position: fixed;
+  top: 150px;
+  left: 0;
+  width: 230px;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  text-align: center;
+}
 
     .strategize-banner h3 {
       font-size: 16px;
@@ -205,12 +205,18 @@
     
     @media (max-width: 768px) {
       .recommended-links, .strategize-banner {
-        position: static;
-        width: 100%;
-        border-radius: 0;
-        box-shadow: none;
-        margin: 20px 0;
-      }
+  position: fixed;
+  top: 150px;
+  left: 0;
+  width: 230px;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  text-align: center;
+}
 
       .recommended-links h3,
       .strategize-banner h3 {
@@ -225,15 +231,8 @@
 
       .recommended-links,
       .strategize-banner {
-        background-color: #1a1a1a;
-        padding: 20px;
-      }
-    }
-
-
-.ozmatit-banner {
   position: fixed;
-  top: 380px;  /* Increased space between StrategiZe and Ozmatit */
+  top: 150px;
   left: 0;
   width: 230px;
   background-color: #1a1a1a;
@@ -241,7 +240,23 @@
   padding: 15px;
   border-radius: 0 8px 8px 0;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  z-index: 1002;
+  text-align: center;
+}
+    }
+
+
+.ozmatit-banner {
+  position: fixed;
+  top: 360px;
+  left: 0;
+  width: 230px;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
   text-align: right;
 }
 
@@ -279,7 +294,7 @@
 @media (max-width: 768px) {
   .ozmatit-banner {
   position: fixed;
-  top: 380px;  /* Increased space between StrategiZe and Ozmatit */
+  top: 360px;
   left: 0;
   width: 230px;
   background-color: #1a1a1a;
@@ -287,7 +302,7 @@
   padding: 15px;
   border-radius: 0 8px 8px 0;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  z-index: 1001;
   text-align: right;
 }
 }
@@ -306,7 +321,7 @@
 
 .strategize-banner, .ozmatit-banner {
   position: fixed;
-  top: 380px;  /* Increased space between StrategiZe and Ozmatit */
+  top: 360px;
   left: 0;
   width: 230px;
   background-color: #1a1a1a;
@@ -314,7 +329,7 @@
   padding: 15px;
   border-radius: 0 8px 8px 0;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  z-index: 1001;
   text-align: right;
 }
 
@@ -411,7 +426,7 @@
 
 
 <div class="ozmatit-banner">
-  <img src="images/ozmatit-logo.png" alt="עוצמתית לוגו" class="ozmatit-logo">
+  <img src="ozmatit-logo.png" alt="עוצמתית לוגו" class="ozmatit-logo">
   <h3><i class="fas fa-female"></i> עוצמתית</h3>
   <p>אנחנו מאמינות שידע פיננסי הוא כוח – וכשנשים חולקות ידע, כולנו מתחזקות.</p>
   <div style="text-align: center;">
